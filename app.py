@@ -28,7 +28,7 @@ def send_email(userdata: Userdata):
 
 
 @app.post('/send_email')
-def load_file(background_tasks: BackgroundTasks, userdata: Userdata):
+def send_email(background_tasks: BackgroundTasks, userdata: Userdata):
     background_tasks.add_task(send_email, userdata)
     time.sleep(5)
     return {'message': 'done'}
